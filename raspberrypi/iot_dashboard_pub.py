@@ -51,6 +51,7 @@ def read_dht():
 			response = requests.get(auto_light_off)
 			GPIO.output(auto_light_pin, GPIO.HIGH)
 		message = nhiet_do + " " + do_am + " " + anh_sang
+		return message
 	except RuntimeError as error:
 		print ("error")
 		return 1

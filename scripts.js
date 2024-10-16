@@ -47,7 +47,7 @@ var Temp_Chart = new Chart("TemperatureChart", {
       backgroundColor: "white",
       borderColor: "#04AA6D",
       data: [0],
-      pointRadius: 0
+      pointRadius: 1
     }]
   },
   options: {
@@ -102,7 +102,7 @@ var Humid_Chart = new Chart("HumidityChart", {
       backgroundColor: "white",
       borderColor: "#04AA6D",
       data: [0],
-      pointRadius: 0
+      pointRadius: 1
     }]
   },
   options: {
@@ -157,7 +157,7 @@ var Light_Chart = new Chart("LightChart", {
       backgroundColor: "white",
       borderColor: "#04AA6D",
       data: [0],
-      pointRadius: 0
+      pointRadius: 1
     }]
   },
   options: {
@@ -213,7 +213,7 @@ var All_Chart = new Chart("AllChart", {
       backgroundColor: "white",
       borderColor: "#ff0000",
       data: [0],
-      pointRadius: 0
+      pointRadius: 1
       }, {
       label: 'Humidity (%)',
       fill: false,
@@ -221,7 +221,7 @@ var All_Chart = new Chart("AllChart", {
       backgroundColor: "white",
       borderColor: "#1b5ed1",
       data: [0],
-      pointRadius: 0
+      pointRadius: 1
       }, {
       label: 'Light (lx)',
       fill: false,
@@ -229,7 +229,7 @@ var All_Chart = new Chart("AllChart", {
       backgroundColor: "white",
       borderColor: "#ffe100",
       data: [0],
-      pointRadius: 0
+      pointRadius: 1
       }]
   },
   options: {
