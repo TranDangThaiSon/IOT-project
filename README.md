@@ -30,7 +30,7 @@ Go to the project directory
   cd iot_dashboard
 ```
 
-on your PC, run 2 terminalS:
+on your PC, run 2 terminals:
 ```bash
   node fetch.js
 ```
@@ -38,7 +38,7 @@ on your PC, run 2 terminalS:
   python code/iot_dashboard_sub.py
 ```
 
-on your raspberry pi, run 2 terminalS:
+on your raspberry pi, run 2 terminals:
 ```bash
   python raspberry pi/iot_dashboard_sub.py
 ```
