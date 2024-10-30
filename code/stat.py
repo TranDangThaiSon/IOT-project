@@ -12,7 +12,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     print((msg.payload))
 
-mqtt_broker_address = "192.168.248.85" #remember to replace with your IP address
+mqtt_broker_address = "192.168.199.85" #remember to replace with your IP address
 
 client.connect(mqtt_broker_address, 1883, 60)
 client.publish("Test topic", "Stat")

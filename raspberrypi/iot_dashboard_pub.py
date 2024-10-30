@@ -12,10 +12,10 @@ GPIO.setwarnings(False)
 auto_light_pin = 19
 auto_fan_pin = 6
 #remember to replace with your IP address
-auto_fan_on = "http://192.168.248.85:3000/auto_fan_on"
-auto_fan_off = "http://192.168.248.85:3000/auto_fan_off"
-auto_light_on = "http://192.168.248.85:3000/auto_light_on"
-auto_light_off = "http://192.168.248.85:3000/auto_light_off"
+auto_fan_on = "http://192.168.81.85:3000/auto_fan_on"
+auto_fan_off = "http://192.168.81.85:3000/auto_fan_off"
+auto_light_on = "http://192.168.81.85:3000/auto_light_on"
+auto_light_off = "http://192.168.81.85:3000/auto_light_off"
 GPIO.setup(auto_light_pin, GPIO.OUT)
 GPIO.setup(auto_fan_pin, GPIO.OUT)
 dht = adafruit_dht.DHT22(board.D15)
@@ -70,7 +70,7 @@ while True:
 		client.username_pw_set("test_user", "Thaison@@1") #remember to replace with your username and password
 
 		#remember to replace with your IP address
-		mqtt_broker_address = "192.168.248.85"
+		mqtt_broker_address = "192.168.81.85"
 
 		client.connect(mqtt_broker_address, 1883, 60)
 		client.publish("Data topic", metrics) #remember to replace with your channel name

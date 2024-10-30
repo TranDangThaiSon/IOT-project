@@ -86,6 +86,11 @@ div.header div h2{
     margin: 0;
     display: block;
 }
+#LightGauge{
+    width: 100%;
+    margin: 0;
+    display: block;
+}
 
 .Lightswitch {
     position: relative;
@@ -187,6 +192,56 @@ border-radius: 34px;
 border-radius: 50%;
 }
 
+.AutoFanswitch {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.AutoFanswitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.AutoFanslider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.AutoFanslider:before {
+    position: absolute;
+    content: "";
+    width: 38%;
+    height: 85%;
+    left: 5%;
+    bottom: 7.5%;
+    background-color: white;
+    transition: .4s;
+}
+input#AutoFancheckbox:checked + .AutoFanslider {
+    background-color: #04AA6D;
+}
+
+input#AutoFancheckbox:checked + .AutoFanslider:before {
+    transform: translateX(138%);
+}
+
+.AutoFanslider.round {
+border-radius: 34px;
+}
+
+.AutoFanslider.round:before {
+border-radius: 50%;
+}
+
 div.button{
     width: 100%;
     height: 20%;
@@ -250,7 +305,6 @@ th {
 }
 
 #SearchData {
-    background-image: url('/css/searchicon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
     width: 50%;
@@ -260,7 +314,6 @@ th {
     margin-bottom: 12px;
   }
 #SearchHistory {
-    background-image: url('/css/searchicon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
     width: 50%;

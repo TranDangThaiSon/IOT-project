@@ -1,5 +1,5 @@
 /* Place your JavaScript in this file */
-var ip = "http://localhost:3000"
+var ip = "http://192.168.199.85:3000"
 var fetch_url = ip + "/fetch"
 var action_history_url = ip + "/action_history"
 var more_data_url = ip + "/more_data"
@@ -190,7 +190,7 @@ var Light_Chart = new Chart("LightChart", {
         yAxes: [{
             ticks: {
             min: 0, 
-            max:200,
+            max:400,
             fontColor: "white",
             fontFamily: "verdana"
             },
@@ -262,7 +262,7 @@ var All_Chart = new Chart("AllChart", {
           yAxes: [{
               ticks: {
               min: 0, 
-              max:200,
+              max:400,
               fontColor: "white",
               fontFamily: "verdana"
               },
@@ -496,6 +496,22 @@ async function getStatus(){
       fan_checkbox.checked = true;
       light_checkbox.checked = true;
     }
+    if (document.getElementById('Lightcheckbox').checked) {
+      light_off.style.display='none'
+      light_on.style.display='block'
+    }
+    else{
+      light_off.style.display='block'
+      light_on.style.display='none'
+    }
+    if (document.getElementById('Fancheckbox').checked) {
+      fan_off.style.display='none'
+      fan_on.style.display='block'
+    }
+    else{
+      fan_off.style.display='block'
+      fan_on.style.display='none'
+    }
   } catch (error) {
     console.error(error.message);
   }
@@ -639,7 +655,7 @@ pointer: {
 },
 staticLabels: {
   font: "10px verdana",  
-  labels: [20, 40, 60, 80, 100, 120, 140, 160, 180, 200],  
+  labels: [50, 100, 150, 200, 250, 300, 350],  
   color: "#FFFFFF",  
   fractionDigits: 0  
 },
@@ -660,7 +676,7 @@ generateGradient: true
 };
 
 var gaugeLight = new Gauge(lightgauge).setOptions(Light_opts); 
-gaugeLight.maxValue = 200; 
+gaugeLight.maxValue = 400; 
 gaugeLight.setMinValue(0);  
 gaugeLight.animationSpeed = 50; 
 gaugeLight.set(85); 
@@ -672,7 +688,7 @@ document.getElementById('Lightcheckbox').addEventListener('change', Lightfunctio
 document.getElementById('Fancheckbox').addEventListener('change', Fanfunction);
 
 function Lightfunction(){
-if (this.checked) {
+if (document.getElementById('Lightcheckbox').checked) {
   light_off.style.display='none'
   light_on.style.display='block'
   light_on_command();
@@ -685,7 +701,7 @@ else{
 }
 
 function Fanfunction(){
-if (this.checked) {
+if (document.getElementById('Fancheckbox').checked) {
   fan_off.style.display='none'
   fan_on.style.display='block'
   fan_on_command();
@@ -696,7 +712,6 @@ else{
   fan_off_command();
 }
 }
-
 async function light_on_command(){
   try{
     fetch(light_on_url)
