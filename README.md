@@ -18,6 +18,10 @@ To run this project, you will need to have these tools installed:
 
 `paho-mqtt` on your raspbery pi
 
+## Wiring
+
+![Wiring](wiring.png)
+
 ## Run Locally
 
 Before startting, copy file "raspberry pi" to your raspberry pi
