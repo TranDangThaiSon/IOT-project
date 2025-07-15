@@ -1,0 +1,133 @@
+<!doctype html>
+
+<html>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <style>
+    </style>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>IOT Dashboard</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+        <ul>
+            <li><a id="homebutton" class="active" href="#home">Home</a></li>
+            <li><a id="databutton" class="active" href="#database">Database</a></li>
+        </ul>
+        <div id="home">
+            <div class="header">
+                <div class="container">
+                <h2>Temperature</h2>
+                <canvas id="TemperatureChart"></canvas>
+                <canvas id="TemperatureGauge"></canvas>
+                </div>
+                <div class="container">
+                <h2>Humidity</h2>
+                <canvas id="HumidityChart"></canvas>
+                <canvas id="HumidityGauge"></canvas>
+                </div>
+            </div>
+
+            <div class="header">
+                <div class="container">
+                <h2>Light</h2>
+                <canvas id="LightChart"></canvas>
+                <canvas id="LightGauge"></canvas>
+                </div>
+                <div class="control_container">
+                    <div class="LightFan">
+                        <img src="Light-off.png" id="Light_off">
+                        <img src="Light-on.png" id="Light_on">
+                        <div class="button">
+                            <label class="Lightswitch">
+                            <input type="checkbox" id="Lightcheckbox">
+                            <span class="Lightslider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="LightFan">
+                        <img src="Fan-off.png" id="Fan_off">
+                        <img src="Fan-on.png" id="Fan_on">
+                        <div class="button">
+                            <label class="Fanswitch">
+                            <input type="checkbox" id="Fancheckbox">
+                            <span class="Fanslider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Chart">
+                <button id="More_Button" onclick="More_data()">More Data</button>
+                <button id="Reset_Button" onclick="Reset_data()">Reset Data</button>
+                <canvas id="AllChart"></canvas>
+            </div>
+            <div>
+                <a href="https://github.com/TranDangThaiSon/IOT-project" target="_blank">
+                    <img src="github.png" style="display: block;width:3%;height:3%;margin-left: auto;margin-right: 0px;">
+                </a>
+                <a href="https://app.swaggerhub.com/apis-docs/TRANDANGSON16/IOT_dashboard/1.0.0" target="_blank">
+                    <img src="Swagger.png" style="display: block;width:3%;height:3%;margin-left: auto;margin-right: 0px;">
+                </a>
+            </div>
+        </div>
+
+        <div id="data_base">
+            <div class="header">
+                <div class="tb_title">
+                    <h1 style="color: #ffffff; font-family: verdana;">Data</h1>
+                    <input type="text" id="SearchData" onkeyup="Search_Data()">
+                </div>
+                <div class="tb_title">
+                    <h1 style="color: #ffffff; font-family: verdana;">History</h1>
+                    <input type="text" id="SearchHistory" onkeyup="Search_History()">
+                </div>
+            </div>
+            <div class="header">
+                <div class="container">
+                    <table id="Data_table" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th onclick="sort_id()" style="cursor: pointer;">ID</th>
+                                <th onclick="sort_temp()" style="cursor: pointer;">Temp</th>
+                                <th onclick="sort_humid()" style="cursor: pointer;">Humid</th>
+                                <th onclick="sort_light()" style="cursor: pointer;">Light</th>
+                                <th style="width:50%">Time(mm/dd/yy, hh:mm:ss)</th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align: center;">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container">
+                    <table id="History_table" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th onclick="sort_device_id()" style="cursor: pointer;">ID</th>
+                                <th onclick="sort_device()" style="cursor: pointer;">Device</th>
+                                <th onclick="sort_action()" style="cursor: pointer;">Action</th>
+                                <th>Time(mm/dd/yy, hh:mm:ss)</th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align: center;">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load external JavaScript -->
+        <script src="gauge.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+
+</html>

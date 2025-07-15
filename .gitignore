@@ -1,0 +1,22 @@
+# Thư mục node_modules - không cần đẩy lên GitHub
+node_modules/
+
+# Tệp log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Tệp môi trường - không nên công khai
+.env
+
+# Tệp hệ thống tạm thời
+.DS_Store
+Thumbs.db
+
+# Thư mục build/output
+dist/
+build/
+
+# VSCode settings (nếu bạn dùng VSCode)
+.vscode/
